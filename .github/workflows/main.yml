@@ -16,7 +16,7 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-    - name: Build with Maven
+    - name: Validation with Maven
       run:  mvn validate -f pom.xml 
     
   build:
@@ -41,7 +41,7 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-    - name: Build with Maven
+    - name: Running Tests with Maven
       run:  mvn test -f pom.xml 
       
                 
@@ -54,7 +54,7 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-    - name: Build with Maven
-      run:  mvn package -f pom.xml && ls -la
+    - name: Packaging with Maven
+      run:  mvn package -f pom.xml && ls -la target
       
 
