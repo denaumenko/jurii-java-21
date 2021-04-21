@@ -66,6 +66,6 @@ jobs:
           java-version: 11.0
  
       - name: Deploy
-        run: mvn -B -Pgithub deploy
+        run: sed -i 's/personal-access-token/${{ secrets.GH_PACKAGE_REPO_PASSWORD }}/g' settings.xml && sed -i 's/username/denaumenko/g' settings.xml && mvn -B -Pgithub deploy
         env:
           GITHUB_TOKEN:  ${{ secrets.GH_PACKAGE_REPO_PASSWORD }}
